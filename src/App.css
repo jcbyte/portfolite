@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
-	min-height: 100vh;
+body {
+	@apply min-h-screen bg-zinc-900 text-zinc-100;
 }
