@@ -1,5 +1,5 @@
 import "./App.css";
 
 export default function App() {
-	return <>Hello React</>;
+	return <div className="text-rose-400">Hello React</div>;
 }
