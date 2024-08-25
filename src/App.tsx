@@ -1,5 +1,10 @@
 import "./App.css";
+import PhotoProfile from "./PhotoProfile";
 
 export default function App() {
-	return <div className="text-rose-400">Hello React</div>;
+	return (
+		<>
+			<PhotoProfile />
+		</>
+	);
 }
