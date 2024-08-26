@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function FlipWords({ words, duration = 3000 }: { words: string[]; duration?: number }) {
+export default function FlipWords({ words, duration = 3000 }: { words: [string, ...string[]]; duration?: number }) {
 	const [wordIndex, setWordIndex] = useState<number>(0);
 
 	function nextWord() {
