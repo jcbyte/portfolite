@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const animation = {
-	initial: { opacity: 0, y: 10 },
-	animate: { opacity: 1, y: 0 },
-	exit: { opacity: 0, y: -10 },
-	transition: { duration: 0.5 },
+const letterAnimation = {
+	initial: { opacity: 0, y: 10, filter: "blur(2px)" },
+	animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+	exit: { opacity: 0, y: -10, filter: "blur(2px)" },
+	transition: { duration: 0.5, ease: "easeInOut" },
 };
 
 export default function FlipWords({ words, duration = 3000 }: { words: [string, ...string[]]; duration?: number }) {
@@ -30,9 +30,21 @@ export default function FlipWords({ words, duration = 3000 }: { words: [string, 
 	return (
 		<div>
 			<AnimatePresence mode="wait">
-				<motion.div key={wordIndex} {...animation}>
-					{words[wordIndex]}
-				</motion.div>
+				{words[wordIndex].split("").map((letter, index) => {
+					return (
+						<motion.span
+							key={`${wordIndex}-${index}`}
+							{...letterAnimation}
+							transition={{
+								...letterAnimation.transition,
+								delay: index * 0.01,
+							}}
+							style={{ display: "inline-block" }}
+						>
+							{letter}
+						</motion.span>
+					);
+				})}
 			</AnimatePresence>
 		</div>
 	);
