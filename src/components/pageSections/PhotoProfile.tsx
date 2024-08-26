@@ -1,5 +1,5 @@
+import myPhoto from "../../images/FriendlyPhoto1MB.jpg";
 import HoverVignette from "../ui/HoverVignette";
-import myPhoto from "./images/FriendlyPhoto1MB.jpg";
 
 export default function PhotoProfile() {
 	return (
