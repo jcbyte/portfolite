@@ -12,19 +12,12 @@ export default function FlipWords({ words, duration = 3000 }: { words: [string, 
 	const [wordIndex, setWordIndex] = useState<number>(0);
 
 	function nextWord() {
-		setWordIndex((prev) => {
-			return (prev + 1) % words.length;
-		});
+		setWordIndex((prev) => (prev + 1) % words.length);
 	}
 
 	useEffect(() => {
-		const intervalId = setInterval(() => {
-			nextWord();
-		}, duration);
-
-		return () => {
-			clearInterval(intervalId);
-		};
+		const intervalId = setInterval(nextWord, duration);
+		return () => clearInterval(intervalId);
 	}, [nextWord, duration]);
 
 	return (
