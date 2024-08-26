@@ -1,4 +1,4 @@
-import HoverVignette from "./components/ui/HoverVignette";
+import HoverVignette from "../ui/HoverVignette";
 import myPhoto from "./images/FriendlyPhoto1MB.jpg";
 
 export default function PhotoProfile() {
