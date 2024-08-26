@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const letterAnimation = {
 	initial: { opacity: 0, y: 10, filter: "blur(2px)" },
@@ -11,9 +11,9 @@ const letterAnimation = {
 export default function FlipWords({ words, duration = 3000 }: { words: [string, ...string[]]; duration?: number }) {
 	const [wordIndex, setWordIndex] = useState<number>(0);
 
-	function nextWord() {
+	const nextWord = useCallback(() => {
 		setWordIndex((prev) => (prev + 1) % words.length);
-	}
+	}, [words.length]);
 
 	useEffect(() => {
 		const intervalId = setInterval(nextWord, duration);
