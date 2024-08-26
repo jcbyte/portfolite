@@ -23,21 +23,24 @@ export default function FlipWords({ words, duration = 3000 }: { words: [string, 
 	return (
 		<div>
 			<AnimatePresence mode="wait">
-				{words[wordIndex].split("").map((letter, index) => {
-					return (
-						<motion.span
-							key={`${wordIndex}-${index}`}
-							{...letterAnimation}
-							transition={{
-								...letterAnimation.transition,
-								delay: index * 0.01,
-							}}
-							style={{ display: "inline-block" }}
-						>
-							{letter}
-						</motion.span>
-					);
-				})}
+				<motion.div key={wordIndex}>
+					{words[wordIndex].split("").map((letter, index) => {
+						return (
+							<motion.span
+								key={`${wordIndex}-${index}`}
+								{...letterAnimation}
+								transition={{
+									...letterAnimation.transition,
+									delay: index * 0.01,
+								}}
+								style={{ display: "inline-block" }}
+							>
+								{/* A space would be rendered with width of 0px so we place a `&nbsp` so that it renders correctly */}
+								{letter === " " ? "\u00A0" : letter}
+							</motion.span>
+						);
+					})}
+				</motion.div>
 			</AnimatePresence>
 		</div>
 	);
