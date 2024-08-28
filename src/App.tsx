@@ -14,13 +14,11 @@ export default function App() {
 					"Student",
 					"Tech Enthusiast",
 					"Passionate Coder",
+					"Cat Lover",
 					"Self Motivated",
 					"Quick Learner",
 					"Logical Thinker",
 					"Dedicated Worker",
-					"Team Player",
-					"Problem Solver",
-					"Organised Planner",
 				]}
 			/>
 			<About />
