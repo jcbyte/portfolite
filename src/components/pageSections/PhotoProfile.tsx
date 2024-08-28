@@ -20,10 +20,8 @@ export default function PhotoProfile({
 					<div className="size-full relative flex flex-col items-center justify-center gap-1 rounded-lg">
 						<HoverVignette bgClass="bg-dot-white/[0.4]" radius="150px" />
 						<div className="absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]" />
-						<div className="pointer-events-none font-normal tracking-tight text-zinc-100 text-4xl md:text-7xl">
-							{name}
-						</div>
-						<div className="pointer-events-none font-light tracking-tight text-zinc-100 text-2xl md:text-4xl">
+						<div className="pointer-events-none font-normal tracking-tight text-zinc-100 text-7xl">{name}</div>
+						<div className="pointer-events-none font-light tracking-tight text-zinc-100 text-4xl">
 							<FlipWords words={words} duration={3000} />
 						</div>
 					</div>
