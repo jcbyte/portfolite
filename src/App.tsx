@@ -5,7 +5,7 @@ import myPhoto from "./images/FriendlyPhoto1MB.jpg";
 
 export default function App() {
 	return (
-		<>
+		<div className="p-4 flex flex-col gap-4">
 			<PhotoProfile
 				name="Joel Cutler"
 				photo={myPhoto}
@@ -24,6 +24,6 @@ export default function App() {
 				]}
 			/>
 			<About />
-		</>
+		</div>
 	);
 }

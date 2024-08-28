@@ -12,7 +12,7 @@ export default function PhotoProfile({
 }) {
 	return (
 		<>
-			<div className="flex h-[28rem] p-4 gap-4">
+			<div className="flex h-[28rem] gap-4">
 				<div className="w-2/5 h-full">
 					<img src={photo} alt="Profile Picture" className="size-full object-cover rounded-lg" />
 				</div>
