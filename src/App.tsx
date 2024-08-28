@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/pageSections/About";
 import PhotoProfile from "./components/pageSections/PhotoProfile";
 import myPhoto from "./images/FriendlyPhoto1MB.jpg";
 
@@ -22,6 +23,7 @@ export default function App() {
 					"Organised Planner",
 				]}
 			/>
+			<About />
 		</>
 	);
 }
