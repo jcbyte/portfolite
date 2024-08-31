@@ -2,7 +2,7 @@
 
 import BoldWord from "../ui/BoldWord";
 
-export default function AboWordut() {
+export default function AboutSection() {
 	return (
 		<div className="relative p-4 bg-char rounded-lg h-[24rem] flex flex-col justify-center items-center gap-4 bg-zinc-800/25">
 			<div className="absolute pointer-events-none inset-0 bg-black [mask-image:linear-gradient(to_top_right,transparent_100%,transparent_50%)]" />

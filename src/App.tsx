@@ -1,11 +1,11 @@
 import "./App.css";
-import About from "./components/pageSections/About";
-import PhotoProfile from "./components/pageSections/PhotoProfile";
+import AboutSection from "./components/pageSections/AboutSection";
+import PhotoProfileSection from "./components/pageSections/PhotoProfileSection";
 export default function App() {
 	return (
 		<div className="p-4 flex flex-col gap-4">
-			<PhotoProfile />
-			<About />
+			<PhotoProfileSection />
+			<AboutSection />
 		</div>
 	);
 }

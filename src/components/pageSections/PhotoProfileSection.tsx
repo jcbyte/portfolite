@@ -15,7 +15,7 @@ const flipWords: [string, ...string[]] = [
 	"Dedicated Worker",
 ];
 
-export default function PhotoProfile({}: {}) {
+export default function PhotoProfileSection({}: {}) {
 	return (
 		<>
 			<div className="flex h-[28rem] gap-4">
