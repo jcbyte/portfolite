@@ -1,3 +1,5 @@
-export default function BoldWord({ word }: { word: string }) {
-	return <div className="font-bold inline">{word}</div>;
+import { ReactNode } from "react";
+
+export default function BoldWord({ children }: { children: ReactNode }) {
+	return <div className="font-bold inline">{children}</div>;
 }
