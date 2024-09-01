@@ -1,5 +1,3 @@
-// TODO make hover animations possible visual snippets when hovering over bold words
-
 import FancyWord from "../ui/FancyWord";
 
 export default function AboutSection() {

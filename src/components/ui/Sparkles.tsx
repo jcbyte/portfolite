@@ -13,15 +13,15 @@ export default function Sparkles({ id }: { id: string }) {
 				fpsLimit: 60,
 				particles: {
 					color: {
-						value: "#ffffff",
+						value: "#f4f4f5",
 					},
 					move: {
 						enable: true,
-						direction: "right",
-						straight: true,
+						direction: "outside",
+						straight: false,
 						speed: {
 							min: 0.2,
-							max: 0.8,
+							max: 0.6,
 						},
 					},
 					number: {
@@ -30,7 +30,7 @@ export default function Sparkles({ id }: { id: string }) {
 							width: 200,
 							height: 100,
 						},
-						value: 240,
+						value: 480,
 					},
 					opacity: {
 						value: {
@@ -57,8 +57,8 @@ export default function Sparkles({ id }: { id: string }) {
 					},
 					size: {
 						value: {
-							min: 0.5,
-							max: 1.5,
+							min: 0.2,
+							max: 0.8,
 						},
 					},
 				},

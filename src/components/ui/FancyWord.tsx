@@ -9,7 +9,7 @@ const wordAnimation = {
 
 export default function FancyWord({ children, id }: { children: ReactNode; id: string }) {
 	return (
-		<motion.div className="relative font-bold inline-block bg-zinc-800 px-1 text-teal-500" {...wordAnimation}>
+		<motion.div className="relative font-bold inline-block px-1 align-baseline leading-[1em]" {...wordAnimation}>
 			<Sparkles id={`fancy-${id}`} />
 			{children}
 		</motion.div>
