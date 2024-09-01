@@ -1,10 +1,10 @@
 import Particles from "@tsparticles/react";
 
-export default function Sparkles() {
+export default function Sparkles({ id }: { id: string }) {
 	return (
 		<Particles
 			className="absolute inset-0 z-10"
-			id="tsparticles"
+			id={`sparkles-${id}`}
 			options={{
 				fullScreen: {
 					enable: false,
@@ -17,9 +17,11 @@ export default function Sparkles() {
 					},
 					move: {
 						enable: true,
+						direction: "right",
+						straight: true,
 						speed: {
-							min: 0.1,
-							max: 0.2,
+							min: 0.2,
+							max: 0.8,
 						},
 					},
 					number: {
@@ -28,7 +30,7 @@ export default function Sparkles() {
 							width: 200,
 							height: 100,
 						},
-						value: 120,
+						value: 240,
 					},
 					opacity: {
 						value: {

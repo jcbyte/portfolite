@@ -1,6 +1,6 @@
 // TODO make hover animations possible visual snippets when hovering over bold words
 
-import BoldWord from "../ui/BoldWord";
+import FancyWord from "../ui/FancyWord";
 
 export default function AboutSection() {
 	return (
@@ -8,12 +8,13 @@ export default function AboutSection() {
 			<div className="absolute pointer-events-none inset-0 bg-black [mask-image:linear-gradient(to_top_right,transparent_100%,transparent_50%)]" />
 			<div className="text-5xl font-normal">About Me</div>
 			<div className="text-xl font-light max-w-[46rem] text-center">
-				I'm a <BoldWord>passionate</BoldWord> and <BoldWord>dedicated</BoldWord> tech enthusiast and student. With a
-				strong foundation in various programming languages, I thrive in environments that challenge my{" "}
-				<BoldWord>logical thinking</BoldWord> and <BoldWord>problem-solving</BoldWord> skills. In my free time, I enjoy
-				coding and gaming with friends. I love learning, am highly <BoldWord>motivated</BoldWord>,{" "}
-				<BoldWord>organised</BoldWord>, and committed to continuously expanding my skill set. Most importantly, I adore
-				cats and have a beautiful orange cat, <BoldWord>Ollie</BoldWord>.
+				I'm a <FancyWord id="0">passionate</FancyWord> and <FancyWord id="1">dedicated</FancyWord> tech enthusiast and
+				student. With a strong foundation in various programming languages, I thrive in environments that challenge my{" "}
+				<FancyWord id="2">logical thinking</FancyWord> and <FancyWord id="3">problem-solving</FancyWord> skills. In my
+				free time, I enjoy coding and gaming with friends. I love learning, am highly{" "}
+				<FancyWord id="4">motivated</FancyWord>, <FancyWord id="5">organised</FancyWord>, and committed to continuously
+				expanding my skill set. Most importantly, I adore cats and have a beautiful orange cat,{" "}
+				<FancyWord id="6">Ollie</FancyWord>.
 			</div>
 		</div>
 	);
