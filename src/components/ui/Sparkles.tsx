@@ -1,6 +1,6 @@
 import Particles from "@tsparticles/react";
 
-export default function Sparkles({ id }: { id: string }) {
+export default function Sparkles({ id, density }: { id: string; density: number }) {
 	return (
 		<Particles
 			className="absolute inset-0 z-10"
@@ -27,10 +27,10 @@ export default function Sparkles({ id }: { id: string }) {
 					number: {
 						density: {
 							enable: true,
-							width: 200,
+							width: 100,
 							height: 100,
 						},
-						value: 480,
+						value: density,
 					},
 					opacity: {
 						value: {

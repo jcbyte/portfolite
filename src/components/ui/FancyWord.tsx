@@ -33,7 +33,7 @@ export default function FancyWord({
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<Sparkles id={`fancy-${id}`} />
+			<Sparkles id={`fancy-${id}`} density={200} />
 			<motion.div
 				className="font-bold align-baseline leading-[1em]"
 				animate={isHovered ? wordAnimationAnimate : undefined}

@@ -1,5 +1,4 @@
 import FancyWord from "../ui/FancyWord";
-import ShootingStars from "../ui/ShootingStars";
 
 // TODO have shooting stars on the background of this and when hovering over a word they speed up
 
