@@ -1,4 +1,7 @@
 import FancyWord from "../ui/FancyWord";
+import ShootingStars from "../ui/ShootingStars";
+
+// TODO have shooting stars on the background of this and when hovering over a word they speed up
 
 export default function AboutSection() {
 	return (
@@ -12,7 +15,10 @@ export default function AboutSection() {
 				free time, I enjoy coding and gaming with friends. I love learning, am highly{" "}
 				<FancyWord id="4">motivated</FancyWord>, <FancyWord id="5">organised</FancyWord>, and committed to continuously
 				expanding my skill set. Most importantly, I adore cats and have a beautiful orange cat,{" "}
-				<FancyWord id="6">Ollie</FancyWord>.
+				<FancyWord id="6" textColour="orange-600" glowColour="orange-700">
+					Ollie
+				</FancyWord>
+				.
 			</div>
 		</div>
 	);
