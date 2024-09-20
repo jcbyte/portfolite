@@ -24,6 +24,7 @@ export default function App() {
 				<PhotoProfileSection />
 				<AboutSection />
 			</div>
+			<div className="!h-[1000px]">// TODO remove this, this is for testing navbar</div>
 			<ContactSection />
 		</>
 	);
