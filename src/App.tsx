@@ -11,9 +11,6 @@ export default function App() {
 	useEffect(() => {
 		initParticlesEngine(async (engine) => {
 			await loadFull(engine);
-		}).then(() => {
-			console.log("ay");
-			// setInit(true);
 		});
 	}, []);
 
