@@ -1,5 +1,6 @@
 // TODO animation from full to floating when scrolling from top.
 
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -25,11 +26,20 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<div className="w-full">
-			<div className="bg-zinc-800/95 p-2 ">Navbar</div>
+		// TODO create gap here which is the same height as the full navbar
+
+		<div className="w-full fixed z-50">
+			<motion.div
+				className="bg-zinc-800 absolute p-2 rounded-full"
+				animate={{
+					left: isScrolled ? "2rem" : 0,
+					right: isScrolled ? "2rem" : 0,
+					top: isScrolled ? "0.5rem" : 0,
+					borderRadius: isScrolled ? "8px" : 0,
+				}}
+			>
+				Navbar
+			</motion.div>
 		</div>
-		// <div className="w-full fixed z-50">
-		// 	<div className="bg-zinc-800/95 absolute my-2 inset-x-8 p-2 rounded-full">Navbar</div>
-		// </div>
 	);
 }
