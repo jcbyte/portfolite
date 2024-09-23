@@ -7,7 +7,6 @@ export default function Navbar() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			console.log(window.scrollY, navbarHeight);
 			if (window.scrollY > navbarHeight) {
 				setIsScrolled(true);
 			} else {
@@ -23,12 +22,9 @@ export default function Navbar() {
 	}, [navbarHeight]);
 
 	const getNavbarHeight = (node: HTMLDivElement) => {
-		console.log(node);
-
 		if (node) {
 			const calculatedHeight: number = node.getBoundingClientRect().height;
 			setNavbarHeight(calculatedHeight);
-			console.log(calculatedHeight);
 		}
 	};
 
