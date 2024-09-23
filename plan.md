@@ -13,10 +13,8 @@ Entire page is one page (use lazy loading for further down elements)
 
 ### Components
 
-- Navbar - clicking on a tip will scroll to the section
 - Education - cards list - image? need grades - possibly expandable
-- Experience - bento grid?
-- Work History - cards list
+- Experience + Work History - bento grid? cards list?
 - Achievements - regular list - bento grid? - possibly expandable
 - Skills and interests
 - Projects

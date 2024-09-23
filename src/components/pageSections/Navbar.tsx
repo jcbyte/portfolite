@@ -1,3 +1,5 @@
+// TODO make buttons work
+
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -41,7 +43,16 @@ export default function Navbar() {
 						borderRadius: isScrolled ? "8px" : 0,
 					}}
 				>
-					Navbar
+					<div className="flex justify-between mx-16">
+						<div>Me</div>
+						<div>About</div>
+						<div>Experience</div>
+						<div>Projects</div>
+						<div>Achievements</div>
+						<div>Education</div>
+						<div>Skills</div>
+						<div>Contact</div>
+					</div>
 				</motion.div>
 			</div>
 
