@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Chip from "../ui/Chip";
 
-// TODO list all
-// TODO open one of the educations
+// TODO custom scroll bar
 
 type EducationSubject = { subject: string; grade: string };
 type Education = {
@@ -108,10 +107,29 @@ function EducationBlock({
 }
 
 export default function EducationSection() {
+	const [selectedEducation, setSelectedEducation] = useState<number | null>(null);
+
+	function handleBlockClicked(blockClicked: number) {
+		if (selectedEducation === blockClicked) {
+			setSelectedEducation(null);
+		} else {
+			setSelectedEducation(blockClicked);
+		}
+	}
+
 	return (
 		<div className="flex gap-2 overflow-x-auto">
 			{educations.map((education: Education, i) => {
-				return <EducationBlock education={education} expanded={false} />;
+				return (
+					<EducationBlock
+						key={i}
+						education={education}
+						expanded={selectedEducation === i}
+						blockClicked={() => {
+							handleBlockClicked(i);
+						}}
+					/>
+				);
 			})}
 		</div>
 	);

@@ -10,6 +10,7 @@ Entire page is one page (use lazy loading for further down elements)
 
 - different layout for different size views
 - add readme
+- custom scroll bar
 
 ### Components
 
