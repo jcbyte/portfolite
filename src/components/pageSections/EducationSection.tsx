@@ -23,6 +23,17 @@ const educations: Education[] = [
 		start: "September 2023",
 		finish: "Current",
 		subject: "MEng Computer Science",
+		extra: (
+			<>
+				<div>
+					During my first year, I achieved a score of 91%, while having an incredible experience learning and expanding
+					my technical skills, whilst making great friends along the way.
+				</div>
+				<div className="mt-2">
+					Now in my second year, I'm diving deeper into fascinating topics and still absolutely loving my studies.
+				</div>
+			</>
+		),
 	},
 	{
 		school: "Self-Study",
