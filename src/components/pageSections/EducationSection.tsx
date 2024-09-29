@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import Chip from "../ui/Chip";
 
 // TODO list all
+// TODO open one of the educations
 
 type EducationSubject = { subject: string; grade: string };
 type Education = {
@@ -14,33 +15,37 @@ type Education = {
 	extra?: ReactNode;
 };
 
-const education: Education = {
-	school: "Callywith College",
-	location: "Bodmin, Cornwall",
-	start: "September 2020",
-	finish: "May 2022",
-	grades: [
-		{ subject: "A Level Computer Science", grade: "A*" },
-		{ subject: "A Level Mathematics", grade: "A*" },
-		{ subject: "A Level Physics", grade: "A*" },
-		{ subject: 'EPQ "Quantum Computing"', grade: "A*" },
-	],
-};
+const educations: Education[] = [
+	{
+		school: "Callywith College",
+		location: "Bodmin, Cornwall",
+		start: "September 2020",
+		finish: "May 2022",
+		grades: [
+			{ subject: "A Level Computer Science", grade: "A*" },
+			{ subject: "A Level Mathematics", grade: "A*" },
+			{ subject: "A Level Physics", grade: "A*" },
+			{ subject: 'EPQ "Quantum Computing"', grade: "A*" },
+		],
+	},
+];
 
-export default function EducationSection() {
-	const [isExpanded, setIsExpanded] = useState<boolean>(false);
-
+function EducationBlock({
+	education,
+	expanded,
+	blockClicked,
+}: {
+	education: Education;
+	expanded: boolean;
+	blockClicked?: React.MouseEventHandler<HTMLDivElement>;
+}) {
 	return (
 		<motion.div
 			className={`${
-				isExpanded ? "w-[34rem] h-[22rem] bg-zinc-900 border-zinc-200" : "size-[22rem] bg-zinc-950 border-zinc-500"
+				expanded ? "w-[34rem] h-[22rem] bg-zinc-900 border-zinc-200" : "size-[22rem] bg-zinc-950 border-zinc-500"
 			} relative rounded-lg border p-4 hover:bg-zinc-900 hover:shadow-lg duration-300 cursor-pointer overflow-hidden`}
 			transition={{ duration: 0.2 }}
-			onClick={() => {
-				setIsExpanded((prev) => {
-					return !prev;
-				});
-			}}
+			onClick={blockClicked}
 		>
 			<div className="flex flex-col h-full">
 				<div className="flex-grow flex flex-col w-[18rem]">
@@ -65,12 +70,22 @@ export default function EducationSection() {
 
 				<motion.div
 					className="absolute left-[18rem] w-[16rem]"
-					animate={{ opacity: isExpanded ? 1 : 0 }}
+					animate={{ opacity: expanded ? 1 : 0 }}
 					transition={{ duration: 0.1 }}
 				>
 					{education.extra ?? "No extra information"}
 				</motion.div>
 			</div>
 		</motion.div>
+	);
+}
+
+export default function EducationSection() {
+	return (
+		<>
+			{educations.map((education: Education, i) => {
+				return <EducationBlock education={education} expanded={false} />;
+			})}
+		</>
 	);
 }
