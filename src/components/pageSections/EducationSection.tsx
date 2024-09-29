@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 import Chip from "../ui/Chip";
 
+// TODO surrounding stuff (title?)
 // TODO custom scroll bar
 
 type EducationSubject = { subject: string; grade: string };
@@ -50,8 +51,15 @@ const educations: Education[] = [
 		grades: [
 			{ subject: "GCSE Computer Science", grade: "9" },
 			{ subject: "GCSE Mathematics", grade: "9" },
+			{ subject: "GCSE Physics", grade: "8" },
+			{ subject: "GCSE Chemistry", grade: "8" },
+			{ subject: "GCSE Biology", grade: "7" },
+			{ subject: "GCSE Design and Technology", grade: "8" },
+			{ subject: "GCSE Economics", grade: "7" },
+			{ subject: "GCSE Geography", grade: "7" },
 			{ subject: "GCSE English Language", grade: "6" },
-			// TODO add all grades
+			{ subject: "GCSE English Literature", grade: "6" },
+			// TODO list some of these in the extra section
 		],
 	},
 ];
