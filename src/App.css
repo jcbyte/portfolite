@@ -5,3 +5,15 @@
 body {
 	@apply min-h-screen bg-zinc-950 text-zinc-100;
 }
+
+::-webkit-scrollbar {
+	@apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-zinc-600 rounded transition-all duration-200 hover:bg-zinc-400;
+}

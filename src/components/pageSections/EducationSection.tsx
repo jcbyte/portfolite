@@ -3,7 +3,6 @@ import { ReactNode, useState } from "react";
 import Chip from "../ui/Chip";
 
 // TODO surrounding stuff (title?)
-// TODO custom scroll bar
 
 type EducationSubject = { subject: string; grade?: string };
 type Education = {
@@ -173,7 +172,7 @@ export default function EducationSection() {
 	}
 
 	return (
-		<div className="flex gap-2 overflow-x-auto">
+		<div className="flex gap-2 overflow-x-auto pb-1">
 			{educations.map((education: Education, i) => {
 				return (
 					<EducationBlock
