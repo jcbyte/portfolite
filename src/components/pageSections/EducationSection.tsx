@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 import Chip from "../ui/Chip";
 
-// TODO surrounding stuff (title?)
-
 type EducationSubject = { subject: string; grade?: string };
 type Education = {
 	school: string;

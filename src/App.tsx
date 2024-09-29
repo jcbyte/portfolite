@@ -31,7 +31,6 @@ export default function App() {
 				<EducationSection />
 				<SkillsSection />
 			</div>
-			<div className="!h-[1000px]">// TODO remove this, this is for testing navbar</div>
 			<ContactSection />
 		</>
 	);

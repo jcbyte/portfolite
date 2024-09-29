@@ -13,8 +13,11 @@ Entire page is one page (use lazy loading for further down elements)
 
 ### Components
 
-- Education - cards list - image? need grades - possibly expandable
-- Experience + Work History - bento grid? cards list?
-- Achievements - regular list - bento grid? - possibly expandable
-- Skills and interests
-- Projects
+- Experience: Work history list (left), experience list (right) - side by side on same timeline
+- Projects: bento grid - when clicked these should expand fully.
+- Achievements - list, need to make this more fancy
+- Skills - moving map (spider web?)
+
+(where do interests fit)
+
+- Navbar, complete it once other elements are in place
