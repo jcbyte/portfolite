@@ -17,6 +17,21 @@ type Education = {
 
 const educations: Education[] = [
 	{
+		school: "University of York",
+		location: "York",
+		start: "September 2023",
+		finish: "Current",
+		grades: [{ subject: "MEng (Hons) Computer Science", grade: "Current" }],
+		// TODO this seems weird
+	},
+	{
+		school: "Self-Study",
+		location: "Cornwall",
+		start: "December 2022",
+		finish: "May 2023",
+		grades: [{ subject: "A Level Further Mathematics", grade: "A*" }],
+	},
+	{
 		school: "Callywith College",
 		location: "Bodmin, Cornwall",
 		start: "September 2020",
@@ -26,6 +41,18 @@ const educations: Education[] = [
 			{ subject: "A Level Mathematics", grade: "A*" },
 			{ subject: "A Level Physics", grade: "A*" },
 			{ subject: 'EPQ "Quantum Computing"', grade: "A*" },
+		],
+	},
+	{
+		school: "St Joseph's School",
+		location: "Launceston, Cornwall",
+		start: "September 2015",
+		finish: "May 2020",
+		grades: [
+			{ subject: "GCSE Computer Science", grade: "9" },
+			{ subject: "GCSE Mathematics", grade: "9" },
+			{ subject: "GCSE English Language", grade: "6" },
+			// TODO add all grades
 		],
 	},
 ];
@@ -43,7 +70,7 @@ function EducationBlock({
 		<motion.div
 			className={`${
 				expanded ? "w-[34rem] h-[22rem] bg-zinc-900 border-zinc-200" : "size-[22rem] bg-zinc-950 border-zinc-500"
-			} relative rounded-lg border p-4 hover:bg-zinc-900 hover:shadow-lg duration-300 cursor-pointer overflow-hidden`}
+			} relative flex-none rounded-lg border p-4 hover:bg-zinc-900 hover:shadow-lg duration-300 cursor-pointer overflow-hidden`}
 			transition={{ duration: 0.2 }}
 			onClick={blockClicked}
 		>
@@ -82,10 +109,10 @@ function EducationBlock({
 
 export default function EducationSection() {
 	return (
-		<>
+		<div className="flex gap-2 overflow-x-auto">
 			{educations.map((education: Education, i) => {
 				return <EducationBlock education={education} expanded={false} />;
 			})}
-		</>
+		</div>
 	);
 }
