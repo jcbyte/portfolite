@@ -1,23 +1,63 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
 import Chip from "../ui/Chip";
 
-// TODO allow clicking to expand
 // TODO create template for all
 
 export default function EducationSection() {
+	const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
 	return (
-		<div className="size-[22rem] rounded-lg border border-zinc-500 p-4 flex flex-col hover:bg-zinc-900 hover:shadow-lg duration-300 cursor-pointer">
-			<div className="flex-grow flex flex-col">
-				<div className="text-xl font-semibold">Callywith College</div>
-				<div className="text-sm text-zinc-500">Bodmin, Cornwall</div>
-				<div className="text-sm">September 2020 - May 2022</div>
+		<motion.div
+			className={`${
+				isExpanded ? "w-[34rem] h-[22rem] bg-zinc-900 border-zinc-200" : "size-[22rem] bg-zinc-950 border-zinc-500"
+			} relative rounded-lg border p-4 hover:bg-zinc-900 hover:shadow-lg duration-300 cursor-pointer overflow-hidden`}
+			transition={{ duration: 0.2 }}
+			onClick={() => {
+				setIsExpanded((prev) => {
+					return !prev;
+				});
+			}}
+		>
+			<div className="flex flex-col h-full">
+				<div className="flex-grow flex flex-col w-[18rem]">
+					<div className="text-xl font-bold">Callywith College</div>
+					<div className="text-sm text-zinc-400">Bodmin, Cornwall</div>
+					<div className="text-sm mt-1">September 2020 - May 2022</div>
+				</div>
+				<div className="flex flex-col gap-2 mt-4">
+					<div className="text-md font-semibold">Grades:</div>
+					<Chip>
+						<div className="text-sm font-semibold">
+							A Level Computer Science: <div className="inline-block font-bold">A*</div>
+						</div>
+					</Chip>
+					<Chip>
+						<div className="text-sm font-semibold">
+							A Level Mathematics: <div className="inline-block font-bold">A*</div>
+						</div>
+					</Chip>
+					<Chip>
+						<div className="text-sm font-semibold">
+							A Level Physics: <div className="inline-block font-bold">A*</div>
+						</div>
+					</Chip>
+					<Chip>
+						<div className="text-sm font-semibold">
+							EPQ "Quantum Computing": <div className="inline-block font-bold">A*</div>
+						</div>
+					</Chip>
+				</div>
+
+				<motion.div
+					className="absolute left-[18rem] w-[16rem]"
+					animate={{ opacity: isExpanded ? 1 : 0 }}
+					transition={{ duration: 0.1 }}
+				>
+					Write some content here please Write some content here please Write some content here please Write some
+					content here please Write some content here please Write some content here please{" "}
+				</motion.div>
 			</div>
-			<div className="flex flex-col gap-2">
-				<div>Grades:</div>
-				<Chip>A Level Computer Science: A* </Chip>
-				<Chip>A Level Mathematics: A*</Chip>
-				<Chip>A Level Physics: A*</Chip>
-				<Chip>EPQ "Quantum Computing": A*</Chip>
-			</div>
-		</div>
+		</motion.div>
 	);
 }
