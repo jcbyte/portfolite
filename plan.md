@@ -8,8 +8,9 @@ Entire page is one page (use lazy loading for further down elements)
 
 ## TODO
 
-- different layout for different size views
 - add readme
+- add more colour
+- different layout for different size views
 
 ### Components
 
