@@ -1,4 +1,5 @@
 import { IconDeviceLaptop, IconStar } from "@tabler/icons-react";
+import { useState } from "react";
 
 type Experience = {
 	title: string;
@@ -11,6 +12,7 @@ type Experience = {
 
 // TODO work maybe company and title can be separate ?
 // TODO animations
+// TODO possibly only show top 5/6 then an expand button could be pressed?
 
 const experiences: Experience[] = [
 	{
@@ -127,6 +129,8 @@ const experiences: Experience[] = [
 ];
 
 export default function ExperienceSection() {
+	const [expanded, setExpanded] = useState<boolean[]>([...Array(experiences.length)].fill(false));
+
 	return (
 		<div className="flex justify-center py-4">
 			<div className="relative w-full max-w-[56rem] px-4">
@@ -146,7 +150,25 @@ export default function ExperienceSection() {
 								</div>
 								<div className="text-lg font-semibold mt-1">{item.title}</div>
 								<div className="text-sm font-medium text-zinc-400 mt-1">{item.location}</div>
-								<div className="text-sm mt-2">{item.description}</div>
+								<div className={`text-sm mt-2 relative overflow-hidden ${!expanded[i] && "max-h-10"}`}>
+									{item.description}
+
+									{!expanded[i] && (
+										<div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-b from-transparent to-zinc-900" />
+									)}
+								</div>
+								<div
+									className="text-sm font-bold underline cursor-pointer hover:text-zinc-400 transition-all duration-200"
+									onClick={() => {
+										setExpanded((prev) => {
+											let newExpanded = [...prev];
+											newExpanded[i] = !newExpanded[i];
+											return newExpanded;
+										});
+									}}
+								>
+									{expanded[i] ? "Read less" : "Read more"}
+								</div>
 								<div
 									className={`absolute top-1/2 ${
 										item.type === "experience" ? "-left-[16.666667%] w-2/12" : "-right-[16.666667%] w-2/12"

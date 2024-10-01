@@ -14,7 +14,6 @@ Entire page is one page (use lazy loading for further down elements)
 
 ### Components
 
-- Experience: Work history list (left), experience list (right) - side by side on same timeline
 - Projects: bento grid - when clicked these should expand fully.
 - Achievements - list, need to make this more fancy
 - Skills - moving map (spider web?)
