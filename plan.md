@@ -8,7 +8,6 @@ Entire page is one page (use lazy loading for further down elements)
 
 ## TODO
 
-- add readme
 - add more colour
 - different layouts for different size views (phone, widescreen, ultrawide)
 
@@ -18,6 +17,6 @@ Entire page is one page (use lazy loading for further down elements)
 - Achievements - list, need to make this more fancy
 - Skills - moving map (spider web?)
 
-(where do interests fit)
+(where do interests fit?)
 
 - Navbar, complete it once other elements are in place
