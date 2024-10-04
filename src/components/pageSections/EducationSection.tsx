@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 import Chip from "../ui/Chip";
 
+// TODO center this when page is wider than all 4
+
 type EducationSubject = { subject: string; grade?: string };
 type Education = {
 	school: string;

@@ -13,9 +13,6 @@ type Experience = {
 	type: "work" | "experience";
 };
 
-// TODO possibly only show top 5/6 then an expand button could be pressed?
-// TODO block widths dependent on screen size
-
 const experiences: Experience[] = [
 	{
 		title: "Software Developer",

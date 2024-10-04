@@ -10,7 +10,7 @@ Entire page is one page (use lazy loading for further down elements)
 
 - add readme
 - add more colour
-- different layout for different size views
+- different layouts for different size views (phone, widescreen, ultrawide)
 
 ### Components
 
