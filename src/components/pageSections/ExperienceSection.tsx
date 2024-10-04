@@ -5,6 +5,7 @@ import AnimatedOnViewItem from "../ui/AnimatedOnViewItem";
 
 type Experience = {
 	title: string;
+	company?: string;
 	location: string;
 	start: string;
 	finish?: string;
@@ -12,13 +13,13 @@ type Experience = {
 	type: "work" | "experience";
 };
 
-// TODO work maybe company and title can be separate ?
 // TODO possibly only show top 5/6 then an expand button could be pressed?
 // TODO block widths dependent on screen size
 
 const experiences: Experience[] = [
 	{
-		title: "ETAS - Software Developer",
+		title: "Software Developer",
+		company: "ETAS",
 		location: "York",
 		start: "June 2024",
 		finish: "August 2024",
@@ -27,7 +28,8 @@ const experiences: Experience[] = [
 		type: "work",
 	},
 	{
-		title: "Butterfly Data - Software Developer",
+		title: "Software Developer",
+		company: "Butterfly Data",
 		location: "Cardiff (Remote)",
 		start: "February 2023",
 		finish: "June 2023",
@@ -44,7 +46,8 @@ const experiences: Experience[] = [
 		type: "experience",
 	},
 	{
-		title: "McDonald's - Crew Worker",
+		title: "Crew Worker",
+		company: "McDonald's",
 		location: "Bodmin, Cornwall",
 		start: "February 2022",
 		finish: "January 2023",
@@ -61,7 +64,8 @@ const experiences: Experience[] = [
 		type: "experience",
 	},
 	{
-		title: "Swallow's Barn Holiday Let - Assistant",
+		title: "Assistant",
+		company: "Swallow's Barn Holiday Let",
 		location: "Summercourt, Cornwall",
 		start: "July 2021",
 		finish: "September 2021",
@@ -152,7 +156,10 @@ function ExperienceItem({ item }: { item: Experience }) {
 						{item.finish && <> - {item.finish}</>}
 					</div>
 					<div className="text-lg font-semibold mt-1">{item.title}</div>
-					<div className="text-sm font-medium text-zinc-400 mt-1">{item.location}</div>
+					<div className="text-sm font-medium text-zinc-400 mt-1">
+						{item.company && <>{item.company} - </>}
+						{item.location}
+					</div>
 					<motion.div
 						className={"text-sm mt-2 relative overflow-hidden"}
 						animate={{ maxHeight: expanded ? `${contentHeight}px` : "40px" }}
