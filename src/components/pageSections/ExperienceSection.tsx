@@ -130,91 +130,74 @@ const experiences: Experience[] = [
 	},
 ];
 
-export default function ExperienceSection() {
-	const [expanded, setExpanded] = useState<boolean[]>(experiences.map(() => false));
-	const contentRefs = useRef<(HTMLDivElement | null)[]>(experiences.map(() => null));
-	const [contentHeights, setContentHeights] = useState<number[]>(experiences.map(() => 0));
+function ExperienceItem({ item }: { item: Experience }) {
+	const [expanded, setExpanded] = useState<boolean>(false);
+	const contentRef = useRef<HTMLDivElement>(null);
+	const [contentHeight, setContentHeight] = useState<number>(0);
 
 	useEffect(() => {
-		setContentHeights((prev) => {
-			let newContentHeights = [...prev];
-
-			contentRefs.current.forEach((contentRef, i) => {
-				if (contentRef) {
-					newContentHeights[i] = contentRef.scrollHeight;
-				}
-			});
-
-			console.log(newContentHeights);
-
-			return newContentHeights;
-		});
+		if (contentRef.current) {
+			setContentHeight(contentRef.current.scrollHeight);
+		}
 	}, []);
 
+	return (
+		<div
+			className={`mb-6 flex justify-between items-center w-full ${item.type === "experience" && "flex-row-reverse"}`}
+		>
+			<div className={`w-5/12 ${item.type === "work" ? "text-right" : "text-left"}`}>
+				<div className="relative bg-zinc-900 p-4 rounded-lg border border-zinc-700">
+					<div className="text-sm font-medium text-zinc-400">
+						{item.start}
+						{item.finish && <> - {item.finish}</>}
+					</div>
+					<div className="text-lg font-semibold mt-1">{item.title}</div>
+					<div className="text-sm font-medium text-zinc-400 mt-1">{item.location}</div>
+					<motion.div
+						className={"text-sm mt-2 relative overflow-hidden"}
+						animate={{ maxHeight: expanded ? `${contentHeight}px` : "40px" }}
+					>
+						<div ref={contentRef}>{item.description}</div>
+
+						<motion.div
+							className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-b from-transparent to-zinc-900"
+							animate={{ opacity: expanded ? 0 : 1 }}
+						/>
+					</motion.div>
+					<div
+						className="text-sm font-bold underline cursor-pointer hover:text-zinc-400 transition-all duration-200"
+						onClick={() => {
+							setExpanded((prev) => !prev);
+						}}
+					>
+						{expanded ? "Read less" : "Read more"}
+					</div>
+					<div
+						className={`absolute top-1/2 ${
+							item.type === "experience" ? "-left-[16.666667%] w-2/12" : "-right-[16.666667%] w-2/12"
+						} h-0.5 bg-zinc-700 -z-10 transform -translate-y-1/2`}
+					/>
+				</div>
+			</div>
+			<div className="flex items-center justify-center size-8 bg-zinc-950 rounded-full">
+				{item.type === "work" ? (
+					<IconDeviceLaptop className="size-5 text-zinc-200" />
+				) : (
+					<IconStar className="size-5 text-zinc-200" />
+				)}
+			</div>
+			<div className="w-5/12" />
+		</div>
+	);
+}
+
+export default function ExperienceSection() {
 	return (
 		<div className="flex justify-center py-4">
 			<div className="relative w-full max-w-[56rem] px-4">
 				<div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-zinc-700 rounded-full -z-10" />
 				{experiences.map((item, i) => (
-					<div
-						key={i}
-						className={`mb-6 flex justify-between items-center w-full ${
-							item.type === "experience" && "flex-row-reverse"
-						}`}
-					>
-						<div className={`w-5/12 ${item.type === "work" ? "text-right" : "text-left"}`}>
-							<div className="relative bg-zinc-900 p-4 rounded-lg border border-zinc-700">
-								<div className="text-sm font-medium text-zinc-400">
-									{item.start}
-									{item.finish && <> - {item.finish}</>}
-								</div>
-								<div className="text-lg font-semibold mt-1">{item.title}</div>
-								<div className="text-sm font-medium text-zinc-400 mt-1">{item.location}</div>
-								<motion.div
-									className={"text-sm mt-2 relative overflow-hidden"}
-									animate={{ maxHeight: expanded[i] ? `${contentHeights[i]}px` : "40px" }}
-								>
-									<div
-										ref={(el) => {
-											contentRefs.current[i] = el;
-										}}
-									>
-										{item.description}
-									</div>
-
-									<motion.div
-										className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-b from-transparent to-zinc-900"
-										animate={{ opacity: expanded[i] ? 0 : 1 }}
-									/>
-								</motion.div>
-								<div
-									className="text-sm font-bold underline cursor-pointer hover:text-zinc-400 transition-all duration-200"
-									onClick={() => {
-										setExpanded((prev) => {
-											let newExpanded = [...prev];
-											newExpanded[i] = !newExpanded[i];
-											return newExpanded;
-										});
-									}}
-								>
-									{expanded[i] ? "Read less" : "Read more"}
-								</div>
-								<div
-									className={`absolute top-1/2 ${
-										item.type === "experience" ? "-left-[16.666667%] w-2/12" : "-right-[16.666667%] w-2/12"
-									} h-0.5 bg-zinc-700 -z-10 transform -translate-y-1/2`}
-								/>
-							</div>
-						</div>
-						<div className="flex items-center justify-center size-8 bg-zinc-950 rounded-full">
-							{item.type === "work" ? (
-								<IconDeviceLaptop className="size-5 text-zinc-200" />
-							) : (
-								<IconStar className="size-5 text-zinc-200" />
-							)}
-						</div>
-						<div className="w-5/12" />
-					</div>
+					<ExperienceItem key={i} item={item} />
 				))}
 			</div>
 		</div>
