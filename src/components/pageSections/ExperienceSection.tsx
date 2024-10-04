@@ -1,6 +1,6 @@
 import { IconDeviceLaptop, IconStar } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Experience = {
 	title: string;
@@ -131,7 +131,25 @@ const experiences: Experience[] = [
 ];
 
 export default function ExperienceSection() {
-	const [expanded, setExpanded] = useState<boolean[]>([...Array(experiences.length)].fill(false));
+	const [expanded, setExpanded] = useState<boolean[]>(experiences.map(() => false));
+	const contentRefs = useRef<(HTMLDivElement | null)[]>(experiences.map(() => null));
+	const [contentHeights, setContentHeights] = useState<number[]>(experiences.map(() => 0));
+
+	useEffect(() => {
+		setContentHeights((prev) => {
+			let newContentHeights = [...prev];
+
+			contentRefs.current.forEach((contentRef, i) => {
+				if (contentRef) {
+					newContentHeights[i] = contentRef.scrollHeight;
+				}
+			});
+
+			console.log(newContentHeights);
+
+			return newContentHeights;
+		});
+	}, []);
 
 	return (
 		<div className="flex justify-center py-4">
@@ -154,9 +172,15 @@ export default function ExperienceSection() {
 								<div className="text-sm font-medium text-zinc-400 mt-1">{item.location}</div>
 								<motion.div
 									className={"text-sm mt-2 relative overflow-hidden"}
-									animate={{ maxHeight: expanded[i] ? "62.5rem" : "2.5rem" }} // TODO this static value should replaced with a dynamic value from text scroll height
+									animate={{ maxHeight: expanded[i] ? `${contentHeights[i]}px` : "40px" }}
 								>
-									{item.description}
+									<div
+										ref={(el) => {
+											contentRefs.current[i] = el;
+										}}
+									>
+										{item.description}
+									</div>
 
 									{!expanded[i] && (
 										<div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-b from-transparent to-zinc-900" />
