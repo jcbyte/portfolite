@@ -1,4 +1,5 @@
 import { IconDeviceLaptop, IconStar } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 type Experience = {
@@ -13,6 +14,7 @@ type Experience = {
 // TODO work maybe company and title can be separate ?
 // TODO animations
 // TODO possibly only show top 5/6 then an expand button could be pressed?
+// TODO block widths dependent on screen size
 
 const experiences: Experience[] = [
 	{
@@ -150,13 +152,16 @@ export default function ExperienceSection() {
 								</div>
 								<div className="text-lg font-semibold mt-1">{item.title}</div>
 								<div className="text-sm font-medium text-zinc-400 mt-1">{item.location}</div>
-								<div className={`text-sm mt-2 relative overflow-hidden ${!expanded[i] && "max-h-10"}`}>
+								<motion.div
+									className={"text-sm mt-2 relative overflow-hidden"}
+									animate={{ maxHeight: expanded[i] ? "62.5rem" : "2.5rem" }} // TODO this static value should replaced with a dynamic value from text scroll height
+								>
 									{item.description}
 
 									{!expanded[i] && (
 										<div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-b from-transparent to-zinc-900" />
 									)}
-								</div>
+								</motion.div>
 								<div
 									className="text-sm font-bold underline cursor-pointer hover:text-zinc-400 transition-all duration-200"
 									onClick={() => {
