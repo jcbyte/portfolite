@@ -182,9 +182,10 @@ export default function ExperienceSection() {
 										{item.description}
 									</div>
 
-									{!expanded[i] && (
-										<div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-b from-transparent to-zinc-900" />
-									)}
+									<motion.div
+										className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-b from-transparent to-zinc-900"
+										animate={{ opacity: expanded[i] ? 0 : 1 }}
+									/>
 								</motion.div>
 								<div
 									className="text-sm font-bold underline cursor-pointer hover:text-zinc-400 transition-all duration-200"
