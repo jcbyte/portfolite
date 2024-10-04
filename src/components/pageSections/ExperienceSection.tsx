@@ -1,6 +1,7 @@
 import { IconDeviceLaptop, IconStar } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import AnimatedOnViewItem from "../ui/AnimatedOnViewItem";
 
 type Experience = {
 	title: string;
@@ -12,7 +13,6 @@ type Experience = {
 };
 
 // TODO work maybe company and title can be separate ?
-// TODO animations
 // TODO possibly only show top 5/6 then an expand button could be pressed?
 // TODO block widths dependent on screen size
 
@@ -197,7 +197,9 @@ export default function ExperienceSection() {
 			<div className="relative w-full max-w-[56rem] px-4">
 				<div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-zinc-700 rounded-full -z-10" />
 				{experiences.map((item, i) => (
-					<ExperienceItem key={i} item={item} />
+					<AnimatedOnViewItem key={i}>
+						<ExperienceItem item={item} />
+					</AnimatedOnViewItem>
 				))}
 			</div>
 		</div>
