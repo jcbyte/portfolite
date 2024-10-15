@@ -21,7 +21,7 @@ const experiences: Experience[] = [
 		start: "June 2024",
 		finish: "August 2024",
 		description:
-			"Working as a software developer for EHOOKS, a decompiler for ECU software used within the automotive industry. This project was written in ruby which I enjoyed learning. We used SVN and Git to manage version control and followed a strict review system for merging. I gained communication and developer skills, as well as learning a lot from being in a larger organisation with very set goals and deadlines.",
+			"Working as a software developer for EHOOKS, a decompiler for ECU software used within the automotive industry. This project was written in Ruby which I enjoyed learning. We used SVN and Git to manage version control and followed a strict review system for merging. I explored ideas during team meetings and gained developer skills, as well as learning a lot from being in a larger organisation certain goals and deadlines.",
 		type: "work",
 	},
 	{
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
 		start: "February 2024",
 		finish: "April 2024",
 		description:
-			"I represented my universities computer science department to prospective students on open days. I created a welcoming environment, provided information and gave tours around the university addressing any questions that were asked. This has strengthened my interpersonal skills by interacting with prospective students and their parents.",
+			"I represented my university's computer science department to prospective students on open days. I created a welcoming environment, provided information and gave tours around the university addressing any questions that were asked. This has strengthened my interpersonal skills by interacting with prospective students and their parents.",
 		type: "work",
 	},
 	{
@@ -41,7 +41,7 @@ const experiences: Experience[] = [
 		start: "February 2023",
 		finish: "June 2023",
 		description:
-			"I worked on an internal project management system for the company using Python with frameworks such as pandas and Dash. Throughout working at Butterfly, I mastered SQL, understanding and creating complex calls to the Postgres database. I used Git with GitHub to manage changes and branches for different releases. I had to be meticulous and obtained strong problem solving as well as verbal skills from working within the professional environment.",
+			"I worked on an internal project management system for the company using Python with frameworks such as pandas and Dash. Throughout working at Butterfly, I mastered SQL, understanding and creating complex calls to the Postgres database. I used Git with GitHub to manage changes and branches for different releases. I had to be meticulous and obtained strong problem solving and verbal skills from working within the professional environment.",
 		type: "work",
 	},
 	{
@@ -50,7 +50,7 @@ const experiences: Experience[] = [
 		start: "January 2023",
 		finish: "February 2023",
 		description:
-			"I spent a month in California working with Amgen (a biotech company) creating a web app to catalogue and search their medicine. Through this process I learnt JavaScript with the React framework and integrated it with a Django backend, since which I have used again multiple times in personal projects. The project also involved creating and managing a Postgres database hosted on AWS which my app interfaced with. This was an incredible experience, and I learnt a huge amount of technical and soft skills.",
+			"I spent a month in California working with the large biotech company Amgen creating a web app to catalogue and search their medicines. Through this process I learnt JavaScript with the React framework and integrated it with a Django backend, since which I have used again multiple times in personal projects. The project also involved creating and managing a Postgres database hosted on AWS which my app interfaced with. This was an incredible experience, and I learnt a huge amount of technical and soft skills.",
 		type: "experience",
 	},
 	{
@@ -60,7 +60,7 @@ const experiences: Experience[] = [
 		start: "February 2022",
 		finish: "January 2023",
 		description:
-			"I maintained the restaurant running smoothly by speaking to and serving customers, cooking and preparing food, taking orders, payments and cleaning. From this I have gained skills including communication and collaboration with other crew members and the ability to be quick and efficient in my work even under pressure.",
+			"As a team I maintained the restaurant running smoothly by speaking with and serving customers, cooking and preparing food, taking orders, payments and cleaning. From this I have gained skills including communication and collaboration with other crew members and the ability to be quick and efficient in my work even under pressure.",
 		type: "work",
 	},
 	{
@@ -87,7 +87,7 @@ const experiences: Experience[] = [
 		location: "Par, Cornwall",
 		start: "July 2021",
 		description:
-			"I worked with Eden's IT team to assist and troubleshoot general tech problems around the site. I was also involved with a professional external team to install multiple 4K 360° cameras to trial 5G infrastructure in Cornwall. This required me to be punctual and communicative and gave me an insight into a larger company's structure and operating procedures. Throughout the experience I talked with programmers and learnt about the servers running the software and camera stitching algorithms.",
+			"I worked with Eden's IT team to assist and troubleshoot general tech problems around the site. I supported a professional external team to install multiple 4K 360° cameras to trial 5G infrastructure in Cornwall. This required me to be punctual and communicative and gave me an insight into a larger company's structure and operating procedures. Throughout the experience I talked with programmers and learnt about the servers running the software and camera stitching algorithms.",
 		type: "experience",
 	},
 
@@ -97,7 +97,7 @@ const experiences: Experience[] = [
 		start: "September 2020",
 		finish: "June 2021",
 		description:
-			"The EPQ is an optional, independent research task in which I researched the topic 'Will Quantum Computers Replace Classical Computers'. I wrote a comprehensive 5000-word report and presented my research. I undertook the EPQ as I love to learn and explore subjects deeply, even managing to run my code on a real quantum computer. Through the EPQ I demonstrated time management skills, my 'completer-finisher' tendency (by finishing it 6 months before the deadline). After completing the EPQ I continue to explore quantum computing as I find it incredible.",
+			"The EPQ is an optional, independent research task I completed alongside my A Levels. I researched the topic 'Will Quantum Computers Replace Classical Computers'. I wrote a comprehensive 5000-word report and presented my research. I undertook the EPQ as I love to learn and explore subjects deeply, even managing to run my code on a real quantum computer. Through the EPQ I demonstrated time management skills, my 'completer-finisher' tendency (by finishing it 6 months before the deadline). After completing the EPQ I continue to explore quantum computing as I find it incredible.",
 		type: "experience",
 	},
 	{
@@ -115,7 +115,7 @@ const experiences: Experience[] = [
 		start: "March 2018",
 		finish: "June 2018",
 		description:
-			"During secondary I volunteered to teach Scratch to children aged 8-11. I had to be reliable, responsible and friendly so they could enjoy their time. This required high levels of patience as some students took longer to understand the concepts. I planned each lesson to ensure we could cover all bases, requiring extra commitment along with my studies.",
+			"Whilst at secondary school I volunteered to teach Scratch to children aged 8-11. I had to be reliable, responsible and friendly so they could enjoy their time. This required high levels of patience as some students took longer to understand the concepts. I planned each lesson to ensure we could cover all bases, requiring extra commitment along with my studies.",
 		type: "experience",
 	},
 	{
